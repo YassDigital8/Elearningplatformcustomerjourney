@@ -40,7 +40,28 @@ export function LandingPage({
               <a href="#" className="text-gray-600 hover:text-gray-900">Contact</a>
             </nav>
 
-
+            <div className="flex items-center gap-3">
+              {user ? (
+                <>
+                  <span className="text-gray-700 hidden sm:inline">Welcome, {user.name}</span>
+                  <Button onClick={onDashboardClick} variant="outline">
+                    My Courses
+                  </Button>
+                  <Button onClick={onLogout} variant="ghost">
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button onClick={onLoginClick} variant="ghost">
+                    Login
+                  </Button>
+                  <Button onClick={onSignupClick}>
+                    Sign Up
+                  </Button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </header>
